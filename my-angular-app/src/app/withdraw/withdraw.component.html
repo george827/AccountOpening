@@ -1,0 +1,9 @@
+
+<div class="card">
+    <h2>withdraw My account</h2>
+    
+    <input type="number" [(ngModel)]="amount" id="amount" placeholder="enter deposit amount"/>
+    <button (click)="withdraw()" class="btn btn-danger">withdraw </button>
+    <p *ngIf="isSuccess"> withdrawn succesful</p>
+    
+</div>

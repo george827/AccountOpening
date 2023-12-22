@@ -1,0 +1,15 @@
+.card-bod {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    padding: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.invalid {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}

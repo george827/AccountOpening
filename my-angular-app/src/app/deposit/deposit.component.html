@@ -1,0 +1,7 @@
+<div class="card">
+    <h2>Deposit My account</h2>
+
+    <input type="number" [(ngModel)]="amount" id="amount" placeholder="enter deposit amount"/>
+    <button (click)="deposit()" class="btn btn-success">Deposit </button>
+    <p *ngIf="isSuccess"> deposit success</p>
+</div>

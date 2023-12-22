@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card">
+        <div class="contain">
+            <h4>Update Profile</h4>
+        </div>
+        <div class="contain">
+            <label for="email">Email:</label>
+            <input type="text" [(ngModel)]="email" id="email" />
+        </div>
+        <div class="contain">
+            <label for="firstname">Name:</label>
+            <input type="text" [(ngModel)]="name" id="first_name" />
+        </div>
+        <div class="contain">
+            <label for="newPassword">Password:</label>
+            <input type="password" [(ngModel)]="password" id="newPassword" />
+        </div>
+        <div class="contain">
+            <button (click)="update()" class="btn btn-danger">Update Profile</button>
+        </div>
+        <div class="contain">
+            <h2 *ngIf="!statusOk"> unable to update profile</h2>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.card-bod {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 0.5rem;
+}
+
+.warn {
+    color: red;
+    font-size: 0.8rem;
+}

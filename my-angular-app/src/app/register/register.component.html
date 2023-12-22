@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Register</h1>
+  <div class="card card-bod">
+
+    <label for="email">Email:</label>
+    <input type="text" [(ngModel)]="email" id="email" class="mt-3" />
+
+    <label for="firstname">Name:</label>
+    <input type="text" [(ngModel)]="name" id="first_name" class="mt-3"/>
+  
+    <label for="newPassword">Password:</label>
+    <input type="password" [(ngModel)]="password" id="newPassword" class="mt-3"/>
+  
+  
+    <button (click)="register()" class="mt-3 btn btn-success">Register</button>
+    <a href="/login">Login instead?</a>
+    <h2 *ngIf="!statusOk" class="warn"> unable to log in</h2>
+  </div>
+  </div>

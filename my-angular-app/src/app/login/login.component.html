@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="card card-bod mt-4">
+      <label for="username">Username:</label>
+      <input type="text" [(ngModel)]="email" id="username"  class="mt-2" />
+    
+      <label for="password">Password:</label>
+      <input type="password" [(ngModel)]="password" id="password" class="mt-2"/>
+    
+      <button (click)="login()"  class="mt-2 btn btn-primary" >Login</button>
+      <h2 *ngIf="!statusOk" class="invalid"> invalid email or password</h2>
+      <a routerLink="/register" class="mt-2">don't have an account sigp instead?</a>
+  
+    </div>
+</div>
