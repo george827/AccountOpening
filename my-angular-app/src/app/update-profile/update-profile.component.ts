@@ -18,42 +18,45 @@ export class UpdateProfileComponent implements OnInit {
   name: string = '';
   password: string = '';
   email: string = '';
-  // balance: Big = new Big(0.0);
-
   isLoading: boolean = true;
   statusOk: boolean = true;
   User!: any;
-// c
+
   constructor(
     private http: HttpClient,
     private router: Router,
     private authService: AuthServiceService
-     ) {}
+  ) {}
 
-     ngOnInit() {
-      const currentUser = this.authService.getUserFromLocalStorage();
+  ngOnInit() {
+    const currentUser = this.authService.getUserFromLocalStorage();
+
+    if (currentUser) {
       this.User = currentUser;
-    }
-    // update user
 
-     update() {
-      const user = { name: this.name, password: this.password, email: this.email, id: this.User.id };
-  
-      this.http.post('http://localhost:8080/api/v1/users/update', user)
-        .subscribe(
-          (response) => {
-            console.log('Update successful!', response);
-            this.isLoading = false;
-            this.statusOk = true;
-            this.router.navigate(['/login']);
-          },
-          (error) => {
-            console.error('Update failed!', error);
-            this.isLoading = false;
-            this.statusOk = false;
-          }
-        );
+      // Initialize input fields with user details
+      this.name = this.User.name || '';
+      this.password = this.User.password || ''; // You might want to reconsider storing passwords in this way.
+      this.email = this.User.email || '';
     }
- 
+  }
 
+  update() {
+    const user = { name: this.name, password: this.password, email: this.email, id: this.User.id };
+
+    this.http.post('http://localhost:8080/api/v1/users/update', user)
+      .subscribe(
+        (response) => {
+          console.log('Update successful!', response);
+          this.isLoading = false;
+          this.statusOk = true;
+          this.router.navigate(['/home']);
+        },
+        (error) => {
+          console.error('Update failed!', error);
+          this.isLoading = false;
+          this.statusOk = false;
+        }
+      );
+  }
 }

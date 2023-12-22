@@ -16,11 +16,13 @@
             <input type="password" [(ngModel)]="password" id="newPassword" />
         </div>
         <div class="contain">
-            <button (click)="update()" class="btn btn-danger">Update Profile</button>
+            <button (click)="update()" class="btn btn-danger" [disabled]="!isLoading">Update Profile</button>
         </div>
         <div class="contain">
-            <h2 *ngIf="!statusOk"> unable to update profile</h2>
+            <h2 *ngIf="!statusOk">Unable to update profile</h2>
         </div>
-
+        <div class="contain" *ngIf="!isLoading">
+            <p>Loading...</p>
+        </div>
     </div>
 </div>
