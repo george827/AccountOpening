@@ -33,10 +33,9 @@ export class UpdateProfileComponent implements OnInit {
 
     if (currentUser) {
       this.User = currentUser;
-
-      // Initialize input fields with user details
+      
       this.name = this.User.name || '';
-      this.password = this.User.password || ''; // You might want to reconsider storing passwords in this way.
+      this.password = this.User.password || ''; 
       this.email = this.User.email || '';
     }
   }
